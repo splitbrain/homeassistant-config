@@ -1,0 +1,11 @@
+- platform: mqtt
+  state_topic: "/home-assistant/balcony/status"
+  name: "Balcony Status"
+  payload_on: "online"
+  payload_off: "offline"
+- platform: mqtt
+  state_topic: "/home-assistant/balcony/sensor/waterlevel"
+  name: "Water Level"
+  payload_on: "1"
+  payload_off: "0"
+

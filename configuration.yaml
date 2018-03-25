@@ -1,0 +1,60 @@
+# general config
+homeassistant:
+  name: Home
+  latitude: 52.506191
+  longitude: 13.465133
+  elevation: 35
+  unit_system: metric
+  time_zone: Europe/Berlin
+
+logger:
+  default: warn
+  logs:
+    rfxtrx: debug
+    homeassistant.components.rfxtrx: debug
+    homeassistant.components.switch.rfxtrx: debug
+    homeassistant.components.sensor.rfxtrx: debug
+
+# server setup
+http:
+  api_password: !secret hass_pass
+  ssl_certificate: /home/homeassistant/dehydrated/certs/splitbrain.duckdns.org/fullchain.pem
+  ssl_key: /home/homeassistant/dehydrated/certs/splitbrain.duckdns.org/privkey.pem
+  base_url: splitbrain.duckdns.org:8123
+
+# duck dns updates
+duckdns:
+  domain: splitbrain
+  access_token: 59d11601-6540-4aee-b8e6-884cbbe1e2d4
+
+# enable features
+frontend:
+config:
+updater:
+conversation:
+history:
+logbook:
+sun:
+
+# one config per setting
+tts:            !include conf/tts.yaml
+device_tracker: !include conf/device_tracker.yaml
+#camera:         !include conf/camera.yaml
+media_player:   !include conf/mediaplayer.yaml
+notify:         !include conf/notify.yaml
+maxcube:        !include conf/maxcube.yaml
+group:          !include conf/group.yaml
+rfxtrx:         !include conf/rfxtrx.yaml
+mqtt:           !include conf/mqtt.yaml
+influxdb:       !include conf/influxdb.yaml
+hue:            !include conf/hue.yaml
+#emulated_hue:   !include conf/emulated_hue.yaml
+google_assistant: !include conf/google_assistant.yaml
+
+# multiple configs per setting
+sensor:         !include_dir_merge_list conf/sensor
+automation:     !include_dir_merge_list conf/automation
+binary_sensor:  !include_dir_merge_list conf/binary_sensor
+switch:         !include_dir_merge_list conf/switch
+light:          !include_dir_merge_list conf/light
+script:         !include_dir_named conf/script

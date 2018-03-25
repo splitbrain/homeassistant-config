@@ -1,0 +1,5 @@
+---
+#device: '/dev/serial/by-id/usb-RFXCOM_RFXtrx433_A11HF2BP-if00-port0'
+device: '/dev/ttyUSB0'
+debug: true
+dummy: false

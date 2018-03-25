@@ -1,0 +1,12 @@
+sequence:
+  - condition: state
+    entity_id: sun.sun
+    state: 'above_horizon'
+  - condition: state
+    entity_id: light.hallway_front
+    state: 'on'
+  - service: light.turn_on
+    data:
+      entity_id: group.hallway
+      brightness: 254
+      color_temp: 305

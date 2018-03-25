@@ -1,0 +1,5 @@
+- platform: mjpeg
+  username: admin
+  password: uwviie
+  mjpeg_url: http://192.168.1.17/videostream.cgi?rate=0
+  still_image_url: http://192.168.1.17/snapshot.cgi

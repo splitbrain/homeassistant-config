@@ -1,0 +1,9 @@
+secrets.yaml
+phue.conf
+known_devices.yaml
+home-assistant.log
+home-assistant_v2.db
+emulated_hue_ids.json
+.HA_VERSION
+.uuid
+tts

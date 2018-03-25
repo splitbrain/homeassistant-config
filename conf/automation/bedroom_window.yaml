@@ -1,0 +1,20 @@
+- alias: 'Bed Room Window Open'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.bedroom_window_1
+    from: 'off'
+    to: 'on'
+    for:
+      minutes: 10
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.weather_temperature
+      below: 15
+    - condition: time
+      after: '08:00:00'
+      before: '20:00:00'
+  action:
+    - service: tts.google_say
+      entity_id: media_player.hallway_speaker
+      data:
+        message: 'The window in the bed room is still open!'

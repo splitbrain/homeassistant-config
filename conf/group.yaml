@@ -1,0 +1,52 @@
+office:
+  name: Office
+  view: yes
+  icon: mdi:desktop-mac
+  entities:
+    - binary_sensor.office_window_1
+    - climate.office_thermostat_1
+    - light.officelight
+    - light.desklamp
+
+bedroom:
+  name: Bed Room
+  view: yes
+  icon: mdi:hotel
+  entities:
+    - binary_sensor.bedroom_window_1
+    - climate.bedroom_thermostat_1
+    - light.bedroomlight
+    - media_player.samsung_tv_remote
+
+livingroom:
+  name: Living Room
+  view: yes
+  icon: mdi:lamp
+  entities:
+    - climate.livingroom_thermostat_1
+    - climate.livingroom_thermostat_2
+    - binary_sensor.livingroom_window
+    - media_player.living_room
+
+hallway:
+  name: Hallway
+  view: yes
+  icon: mdi:key-variant
+  entities:
+    - camera.mjpeg_camera
+    - light.hallway_front
+    - light.hallway_back
+    - light.hallway_mirror
+    - media_player.hallway_speaker
+
+balcony:
+  name: Balcony
+  view: yes
+  icon: mdi:flower
+  entities:
+    - binary_sensor.balcony_status
+    - binary_sensor.water_level
+    - switch.pump
+    - sun.sun
+    - sensor.weather_temperature
+    - sensor.weather_current

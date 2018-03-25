@@ -1,0 +1,29 @@
+- alias: 'Intrusion'
+  trigger:
+    - platform: state
+      entity_id: light.hue_color_lamp_1
+    - platform: state
+      entity_id: light.hue_color_lamp_2
+    - platform: state
+      entity_id: light.hue_color_lamp_3
+  condition:
+    - condition: state
+      entity_id: device_tracker.andi
+      state: 'not_home'
+    - condition: state
+      entity_id: device_tracker.kaddi
+      state: 'not_home'
+  action:
+    service: notify.both
+    data:
+      title: 'Intrusion detected'
+      message: 'Lights were switched but nobody is home. Please check the camera.'
+      data:
+        url: 'https://splitbrain.duckdns.org:8123/states/group.hallway'
+        url_title: 'Check Camera'
+        priority: 2
+        timestamp: true
+        expire: 3600
+        retry: 30
+        sound: 'siren'
+

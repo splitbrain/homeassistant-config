@@ -1,0 +1,16 @@
+- name: Pushbullet
+  platform: pushbullet
+  api_key: !secret pushbullet_key_andi
+- name: both
+  platform: pushover
+  api_key: !secret pushover_app
+  user_key: !secret pushover_both
+- name: andi
+  platform: pushover
+  api_key: !secret pushover_app
+  user_key: !secret pushover_andi
+- name: kaddi
+  platform: pushover
+  api_key: !secret pushover_app
+  user_key: !secret pushover_kaddi
+

@@ -1,0 +1,27 @@
+- alias: 'Sunset'
+  trigger:
+    platform: sun
+    event: 'sunset'
+  action:
+    - service: script.turn_on
+      data:
+        entity_id: script.daynight
+- alias: 'Sunrise'
+  trigger:
+    platform: sun
+    event: 'sunrise'
+  action:
+    - service: script.turn_on
+      data:
+        entity_id: script.daynight
+- alias: 'Lights Suncheck'
+  trigger:
+    platform: state
+    entity_id: group.all_lights
+    from: 'off'
+    to: 'on'
+  action:
+    - service: script.turn_on
+      data:
+        entity_id: script.daynight
+

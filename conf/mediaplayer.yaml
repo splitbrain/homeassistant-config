@@ -1,0 +1,5 @@
+- platform: samsungtv
+  host: 192.168.1.211
+  mac: 0c:89:10:b4:a2:6d
+  timeout: 5
+- platform: cast

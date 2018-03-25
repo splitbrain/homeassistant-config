@@ -1,0 +1,6 @@
+# calls all day and night scripts (those check for sunset themselves)
+sequence:
+  - service: script.turn_on
+    entity_id:
+      - script.hallway_night
+      - script.hallway_day

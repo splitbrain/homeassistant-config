@@ -1,0 +1,69 @@
+- alias: 'Water the plants'
+  trigger:
+    platform: time
+    at: '10:00:00'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.pump
+
+- alias: 'Watering fail test'
+  trigger:
+    platform: time
+    at: '10:00:15'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.pump
+        state: 'off'
+  action:
+    - service: notify.andi
+      data:
+        message: 'Watering failed'
+
+- alias: 'Watering success test'
+  trigger:
+    platform: time
+    at: '10:00:15'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.pump
+        state: 'on'
+  action:
+    - service: notify.andi
+      data:
+        message: 'Watering succeeded'
+
+- alias: 'Stop watering the plants'
+  trigger:
+    platform: time
+    at: '10:00:30'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.pump
+
+- alias: 'Warn on low water'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.water_level
+    from: 'on'
+    to: 'off'
+  action:
+    - service: notify.both
+      data:
+        title: 'Balcony is out of water!'
+        message: 'Please refill the water tank'
+
+- alias: 'Balcony Node MIA'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.balcony_status
+    from: 'on'
+    to: 'off'
+  action:
+    - service: notify.andi
+      data:
+        message: 'NodeMCU on balcony is MIA'
+

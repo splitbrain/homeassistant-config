@@ -1,0 +1,19 @@
+project_id: homeassistant-aa602
+client_id: !secret ga_client_id
+access_token: !secret ga_access_token
+agent_user_id: andi@splitbrain.org
+api_key: !secret ga_api_key
+exposed_domains:
+   - light
+#  - switch
+#  - light
+#  - group
+#entity_config:
+#  switch.kitchen:
+#    name: Custom Name for Google Assistant
+#    aliases:
+#      - bright lights
+#      - entry lights
+#  light.living_room:
+#    expose: false
+#    room: living room

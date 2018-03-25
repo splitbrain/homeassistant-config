@@ -1,0 +1,6 @@
+- platform: mqtt
+  name: Pump
+  command_topic: "/home-assistant/balcony/switch/pump"
+  state_topic: "/home-assistant/balcony/sensor/pump"
+  payload_on: "1"
+  payload_off: "0"

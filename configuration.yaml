@@ -25,7 +25,7 @@ http:
 # duck dns updates
 duckdns:
   domain: splitbrain
-  access_token: 59d11601-6540-4aee-b8e6-884cbbe1e2d4
+  access_token: !secret duckdns
 
 # enable features
 frontend:

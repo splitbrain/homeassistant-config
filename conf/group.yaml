@@ -27,6 +27,10 @@ livingroom:
     - climate.livingroom_thermostat_2
     - binary_sensor.livingroom_window
     - media_player.living_room
+    - light.living_room_secondary
+    - light.socket1
+    - light.socket2
+    - light.socket3
 
 hallway:
   name: Hallway

@@ -1,0 +1,5 @@
+- platform: group
+  name: Living Room Secondary
+  entities:
+    - light.socket1
+    - light.socket2

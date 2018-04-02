@@ -6,6 +6,7 @@ homeassistant:
   elevation: 35
   unit_system: metric
   time_zone: Europe/Berlin
+  customize: !include conf/customize.yaml
 
 logger:
   default: warn

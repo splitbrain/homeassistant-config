@@ -2,5 +2,5 @@ light.socket1:
   friendly_name: "Side Board"
 light.socket2:
   friendly_name: "Floor Lamp"
-light.socket3:
+switch.socket3:
   friendly_name: "Flower Lamp"

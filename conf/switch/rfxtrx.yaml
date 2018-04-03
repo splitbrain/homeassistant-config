@@ -1,6 +1,8 @@
 - platform: rfxtrx
   automatic_add: false
   devices:
+    0710090041030000:
+      name: Socket3
     0710090041040000:
       name: Socket4
     0710090041050000:
